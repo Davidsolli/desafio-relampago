@@ -1,17 +1,23 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
 
 :root {
-  /* Background colors */
+  /* Tema claro (default) */
   --bg-1: #2c3e50;
   --bg-2: #ffffff;
   --bg-3: #0a3d62;
-
-  /* Text colors */
   --txt-1: #ffffff;
   --txt-2: #2c3e50;
-
-  /* Shadows */
   --shadow: rgba(0, 0, 0, 0.3);
+}
+
+/* Tema escuro */
+body.dark-theme {
+  --bg-1: #0a3d62;
+  --bg-2: #2c3e50;
+  --bg-3: #0a3d62;
+  --txt-1: #ffffff;
+  --txt-2: #f1f1f1;
+  --shadow: rgba(255, 255, 255, 0.2);
 }
 
 * {
@@ -40,6 +46,7 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
+  border-bottom: 1px solid white;
 }
 
 nav {
@@ -61,6 +68,7 @@ nav h1 {
 .menu {
   margin-top: 20px;
   display: flex;
+  align-items: center;
   gap: 20px;
   list-style: none;
 }
@@ -92,6 +100,23 @@ nav h1 {
 
 .menu a:hover::after {
   transform: scaleX(1);
+}
+
+/* Botão de toggle de tema */
+#toggle-theme {
+  background: none;
+  border: 2px solid var(--txt-1);
+  color: var(--txt-1);
+  font-size: 16px;
+  padding: 6px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+#toggle-theme:hover {
+  background-color: var(--txt-1);
+  color: var(--bg-1);
 }
 
 /*About*/
